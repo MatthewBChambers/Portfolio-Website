@@ -28,9 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-89&@ahk6q+*q@)2#j5-kcvd2dmoncz=sz9!07_hp+qrx+i@zk-')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',') if os.getenv('ALLOWED_HOSTS') else []
+ALLOWED_HOSTS = ['*']  # For Vercel deployment
+CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app']  # Add your domain here once deployed
 
 
 # Application definition
@@ -136,6 +137,16 @@ STATICFILES_DIRS = [
 # Media files
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Vercel-specific settings
+if os.getenv('VERCEL'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:'  # Use in-memory SQLite for Vercel
+        }
+    }
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
