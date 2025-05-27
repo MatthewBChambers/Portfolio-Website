@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Resume - Matthew Chambers{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <h1 class="section-title text-center mb-5">Resume</h1>
+    
+    <!-- Download Button -->
+    <div class="text-center mb-5">
+        <a href="{% static 'documents/resume.pdf' %}" class="btn btn-primary btn-lg" target="_blank">
+            <i class="fas fa-download me-2"></i>Download Resume PDF
+        </a>
+    </div>
+
+    <!-- Embedded PDF Viewer -->
+    <div class="card mb-5">
+        <div class="card-body p-0">
+            <div class="ratio ratio-16x9" style="min-height: 800px;">
+                <embed src="{% static 'documents/resume.pdf' %}" type="application/pdf" width="100%" height="100%">
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Section -->
+    <section class="mb-5">
+        <h2 class="h3 border-bottom pb-2 mb-4">Professional Summary</h2>
+        <p class="lead">A passionate and detail-oriented software developer with 2 years of experience in Software Engineering. Focused on creating efficient, scalable, and user-friendly applications.</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="mb-5">
+        <h2 class="h3 border-bottom pb-2 mb-4">Work Experience</h2>
+        
+        <!-- Job 1 -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="h5 mb-0">Software Engineering Intern</h3>
+                    <span class="badge bg-primary">August 2022 - May 2024</span>
+                </div>
+                <h4 class="h6 text-muted mb-3">The Home Depot, Atlanta, Georgia</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Created end to end data pipeline for ecommerce product images using Vertex AI in GCP</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Streamlined Package designer workflow by creating custom Unity Application</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Implemented Java Springboot API  for Supply Chain Management</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Built React Native mobile application for Barcode scanning and interactions with THD systems</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Lead Proof of concept for chip used in hardware security</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="h5 mb-0">Development Intern</h3>
+                    <span class="badge bg-primary">May - August 2022</span>
+                </div>
+                <h4 class="h6 text-muted mb-3">Infor, Atlanta, Georgia</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Developed web applications in Infor's Mongoose Platform</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Wrote .NET scripts supporting web applications</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="mb-5">
+        <h2 class="h3 border-bottom pb-2 mb-4">Education</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="h5 mb-0">Bachelor of Science in Computer Science</h3>
+                    <span class="badge bg-primary">Completed</span>
+                </div>
+                <h4 class="h6 text-muted">University Name</h4>
+                <p>Relevant coursework: Data Structures, Algorithms, Web Development, Database Systems</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mb-5">
+        <h2 class="h3 border-bottom pb-2 mb-4">Technical Skills</h2>
+        <div class="row g-4">
+            <!-- Programming Languages -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Programming Languages</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">Python</span>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-primary">Java</span>
+                            <span class="badge bg-primary">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frameworks -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Frameworks & Libraries</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">React</span>
+                            <span class="badge bg-primary">Django</span>
+                            <span class="badge bg-primary">Node.js</span>
+                            <span class="badge bg-primary">Express</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Tools & Technologies</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">Git</span>
+                            <span class="badge bg-primary">Docker</span>
+                            <span class="badge bg-primary">AWS</span>
+                            <span class="badge bg-primary">Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="mb-5">
+        <h2 class="h3 border-bottom pb-2 mb-4">Certifications</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5">AWS Certified Developer</h3>
+                        <p class="text-muted mb-0">Amazon Web Services, 2022</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5">Professional Scrum Master I</h3>
+                        <p class="text-muted mb-0">Scrum.org, 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 

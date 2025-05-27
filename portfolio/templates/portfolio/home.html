@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Matthew Chambers - Portfolio{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Hello, I'm Matthew Chambers</h1>
+                <p class="lead mb-4">I'm a disciplined and driven early-career software engineer with a strong foundation in writing clean, efficient code and continuously improving through deliberate practice. I thrive in fast-paced environments, quickly adapting to new technologies while staying focused on delivering high-quality solutions.</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'portfolio:projects' %}" class="btn btn-primary btn-lg">View My Work</a>
+                    <a href="{% url 'portfolio:contact' %}" class="btn btn-outline-primary btn-lg">Get in Touch</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{% static 'images/Graduation with grandparents.jpeg' %}" alt="Matthew at graduation with grandparents" class="img-fluid rounded shadow" style="max-height: 500px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+{% endblock %} 
